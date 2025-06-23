@@ -1,0 +1,99 @@
+:root {
+    --primary-color: #58A6FF;
+    --secondary-color: #8B949E;
+    --bg-dark: #000000;
+    --card-bg: #161B22;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-dark);
+    color: rgb(255, 255, 255);
+    padding: 2rem;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: var(--primary-color);
+    animation: flicker 2s infinite;
+    text-align: center;
+}
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.emoji {
+    font-size: 1.2rem;
+    animation: spin 3s infinite linear;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.carousel {
+    margin: 3rem auto;
+    text-align: center;
+    max-width: 600px;
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.carousel p {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    min-height: 2.5rem;
+    white-space: pre-wrap;
+}
+
+.cursor::after {
+    content: "|";
+    animation: blink 0.8s infinite steps(1);
+    display: inline-block;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
